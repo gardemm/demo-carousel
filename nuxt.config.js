@@ -1,4 +1,9 @@
 module.exports = {
+
+  modules: [
+    ['bootstrap-vue/nuxt']
+  ],
+
   /*
   ** Headers of the page
   */
