@@ -8,10 +8,12 @@ export const state = {
 export const mutations = {
   [ CHANGE_DESKTOP_ITEMS_COUNT ] (state, number) {
     state.desktopItemsCount = number
+    console.log('state info', number);
   },
 
   [ CHANGE_MOBILE_ITEMS_COUNT ] (state, number) {
     state.mobileItemsCount = number
+    console.log('state info', number);
   }
 }
 
