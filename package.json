@@ -18,7 +18,8 @@
     "nuxt": "^1.0.0",
     "sass-loader": "^7.0.1",
     "vue-carousel": "^0.7.3",
-    "vue-style-loader": "^4.1.0"
+    "vue-style-loader": "^4.1.0",
+    "vuex": "^3.0.1"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.1",
