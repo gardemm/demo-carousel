@@ -2,19 +2,23 @@
   <div>
     <h1>Demo carousel</h1>
     <carousel :scrollPerPage="true" :perPageCustom="[[0, 1], [768, 3]]">
-      <slide><a href=""><img src="https://picsum.photos/300/100/" class="image"></a></slide>
-      <slide><a href=""><img src="https://picsum.photos/300/100/" class="image"></a></slide>
-      <slide><a href=""><img src="https://picsum.photos/300/100/" class="image"></a></slide>
-      <slide><a href=""><img src="https://picsum.photos/300/100/" class="image"></a></slide>
-      <slide><a href=""><img src="https://picsum.photos/300/100/" class="image"></a></slide>
-      <slide><a href=""><img src="https://picsum.photos/300/100/" class="image"></a></slide>
+      <slide><a href=""><img src="img/1.jpg" class="image"></a></slide>
+      <slide><a href=""><img src="img/2.jpg" class="image"></a></slide>
+      <slide><a href=""><img src="img/3.jpeg" class="image"></a></slide>
+      <slide><a href=""><img src="img/4.jpeg" class="image"></a></slide>
     </carousel>
   </div>
 </template>
 
 <script>
   export default {
+    data () {
+      return {
+        slides: [
 
+        ]
+      }
+    }
   }
 </script>
 
