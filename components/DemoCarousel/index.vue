@@ -1,19 +1,17 @@
 <template>
   <carousel :scrollPerPage="true" :perPageCustom="[[0, mobileItemsCount], [768, desktopItemsCount]]">
-    <slide v-for="(item, index) in sliderItemsCount" :key="'slide' + index"><a href=""><img src="img/1.jpg" class="image"></a></slide>
-    <!--<slide><a href=""><img src="img/2.jpg" class="image"></a></slide>-->
-    <!--<slide><a href=""><img src="img/3.jpeg" class="image"></a></slide>-->
-    <!--<slide><a href=""><img src="img/4.jpeg" class="image"></a></slide>-->
-    <!--<slide><a href=""><img src="img/5.jpeg" class="image"></a></slide>-->
-    <!--<slide><a href=""><img src="img/6.jpeg" class="image"></a></slide>-->
-    <!--<slide><a href=""><img src="img/7.png" class="image"></a></slide>-->
+    <slide v-for="(item, index) in sliderItems.slice(0, parseInt(sliderItemsCount))" :key="'slide-' + index">
+      <a href="">
+        <img :src="'img/'+ item" class="image">
+      </a>
+    </slide>
   </carousel>
 </template>
 
 <script>
   export default {
     name: 'DemoCarousel',
-    props: ['mobileItemsCount', 'desktopItemsCount' , 'sliderItemsCount']
+    props: ['mobileItemsCount', 'desktopItemsCount' , 'sliderItems', 'sliderItemsCount']
   }
 </script>
 

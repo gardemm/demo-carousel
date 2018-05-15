@@ -3,10 +3,18 @@ import { CHANGE_DESKTOP_ITEMS_COUNT,
         CHANGE_SLIDER_ITEMS_COUNT } from '~/store/MutationTypes'
 
 export const state = {
-  itemsCount: 7,
   desktopItemsCount: 3,
   mobileItemsCount: 1,
-  sliderItemsCount: 7
+  sliderItemsCount: 7,
+  sliderItems: [
+    '1.jpg',
+    '2.jpg',
+    '3.jpeg',
+    '4.jpeg',
+    '5.jpeg',
+    '6.jpeg',
+    '7.png'
+  ]
 }
 
 export const mutations = {
@@ -20,7 +28,6 @@ export const mutations = {
 
   [ CHANGE_SLIDER_ITEMS_COUNT ] (state, number) {
     state.sliderItemsCount = number
-    console.log('state info', number);
   }
 }
 

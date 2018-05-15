@@ -35,6 +35,7 @@
     <!-- CAROUSEL -->
     <DemoCarousel :mobileItemsCount="mobileItemsCount"
                   :desktopItemsCount="desktopItemsCount"
+                  :sliderItems="sliderItems"
                   :sliderItemsCount="sliderItemsCount"></DemoCarousel>
 
   </div>
@@ -50,8 +51,9 @@
     },
     data () {
       return {
+        sliderItemsPercentVal: 100 / this.$store.state.carousel.sliderItems.length * this.sliderItemsCount,
+        sliderItems: this.$store.state.carousel.sliderItems,
         sliderItemsCount: this.$store.state.carousel.sliderItemsCount,
-        sliderItemsPercentVal: 100 / this.$store.state.carousel.itemsCount * this.sliderItemsCount,
         mobileItemsCount: this.$store.state.carousel.mobileItemsCount,
         desktopItemsCount: this.$store.state.carousel.desktopItemsCount,
 
@@ -61,20 +63,23 @@
           })
         },
 
-        changeDesktopICount: function (state, val) {
+        changeDesktopICount: function () {
           this.$nextTick(function () {
             this.$store.dispatch('changeDesktopItemsCount', this.desktopItemsCount)
           })
         },
 
-        changeSliderICount: function (state, val) {
+        changeSliderICount: function () {
           this.$nextTick(function () {
             this.$store.dispatch('changeSliderItemsCount',
-              parseInt(this.$store.state.carousel.itemsCount / 100 * this.sliderItemsPercentVal) || 1)
-            this.sliderItemsCount = this.$store.state.carousel.sliderItemsCount;
+              parseInt(this.$store.state.carousel.sliderItems.length / 100 * this.sliderItemsPercentVal) || 1).then(() => {
+                this.sliderItemsCount = this.$store.state.carousel.sliderItemsCount;
+              });
           })
         },
       }
     }
   }
 </script>
+
+
