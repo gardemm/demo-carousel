@@ -23,10 +23,19 @@
           <option value=3>3</option>
         </b-form-select>
       </b-col>
+
+      <!-- SLIDER ITEMS COUNT -->
+      <b-col cols="2">
+        <div>Slider items count: {{ sliderItemsCount }}</div>
+        <b-form-input v-model="sliderItemsPercentVal" @change.native="changeSliderICount" type="range" class="mb-3">
+        </b-form-input>
+      </b-col>
     </b-row>
 
     <!-- CAROUSEL -->
-    <DemoCarousel :mobileItemsCount="mobileItemsCount" :desktopItemsCount="desktopItemsCount"></DemoCarousel>
+    <DemoCarousel :mobileItemsCount="mobileItemsCount"
+                  :desktopItemsCount="desktopItemsCount"
+                  :sliderItemsCount="sliderItemsCount"></DemoCarousel>
 
   </div>
 </template>
@@ -41,6 +50,8 @@
     },
     data () {
       return {
+        sliderItemsCount: this.$store.state.carousel.sliderItemsCount,
+        sliderItemsPercentVal: 100 / this.$store.state.carousel.itemsCount * this.sliderItemsCount,
         mobileItemsCount: this.$store.state.carousel.mobileItemsCount,
         desktopItemsCount: this.$store.state.carousel.desktopItemsCount,
 
@@ -53,6 +64,14 @@
         changeDesktopICount: function (state, val) {
           this.$nextTick(function () {
             this.$store.dispatch('changeDesktopItemsCount', this.desktopItemsCount)
+          })
+        },
+
+        changeSliderICount: function (state, val) {
+          this.$nextTick(function () {
+            this.$store.dispatch('changeSliderItemsCount',
+              parseInt(this.$store.state.carousel.itemsCount / 100 * this.sliderItemsPercentVal) || 1)
+            this.sliderItemsCount = this.$store.state.carousel.sliderItemsCount;
           })
         },
       }
