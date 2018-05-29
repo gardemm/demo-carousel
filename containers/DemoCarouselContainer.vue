@@ -6,30 +6,30 @@
 
       <!-- FORM VALUES -->
       <!-- MOBILE ITEMS COUNT -->
-      <b-col cols="2">
+      <div class="col-6 col-sm-4 col-md-3 col-xl-2">
         <div>Mobile items count:</div>
         <b-form-select v-model="mobileItemsCount" @click.native="changeMobileICount" class="mb-3">
           <option value=1>1</option>
           <option value=2>2</option>
         </b-form-select>
-      </b-col>
+      </div>
 
       <!-- DESKTOP ITEMS COUNT -->
-      <b-col cols="2">
+      <div class="col-6 col-sm-4 col-md-3 col-xl-2">
         <div>Desktop items count:</div>
         <b-form-select v-model="desktopItemsCount" @click.native="changeDesktopICount" class="mb-3">
           <option value=1>1</option>
           <option value=2>2</option>
           <option value=3>3</option>
         </b-form-select>
-      </b-col>
+      </div>
 
       <!-- SLIDER ITEMS COUNT -->
-      <b-col cols="2">
+      <div class="col-12 col-sm-4 col-md-6 col-xl-6">
         <div>Slider items count: {{ sliderItemsCount }}</div>
         <b-form-input v-model="sliderItemsPercentVal" @change.native="changeSliderICount" type="range" class="mb-3">
         </b-form-input>
-      </b-col>
+      </div>
     </b-row>
 
     <!-- CAROUSEL -->
