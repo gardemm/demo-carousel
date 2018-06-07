@@ -3,7 +3,7 @@ import { CHANGE_DESKTOP_ITEMS_COUNT,
         CHANGE_SLIDER_ITEMS_COUNT } from '~/store/MutationTypes'
 
 export const state = {
-  desktopItemsCount: 5,
+  desktopItemsCount: 3,
   mobileItemsCount: 2,
   sliderItemsCount: 7,
   allItemsCount: 20

@@ -1,4 +1,5 @@
 module.exports = {
+
   modules: [
     ['bootstrap-vue/nuxt']
   ],
@@ -8,6 +9,7 @@ module.exports = {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { name: 'keywords', content: 'Vue bootstrap carousel demo, vue carousel example, nuxt carousel example, '},
       { hid: 'description', name: 'description', content: 'Vue bootstrap carousel demo ssr' }
     ],
     link: [

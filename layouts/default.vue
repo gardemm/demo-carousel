@@ -33,14 +33,16 @@
   </div>
 </template>
 
-<style lang="scss" >
+<style lang="scss">
+
+  // общие стили
   h1, h2 {
     margin-bottom: 35px;
     margin-top: 35px;
     color: #4aa3b8;
   }
 
-  // STICKY FOOTER MTFKA
+  // sticky footer nuxt styles !
   html {
     color: #4aa3b8;
     background-color: #f5f5f5;
@@ -64,18 +66,5 @@
     width: 100%;
     height: 60px;
     line-height: 60px;
-
   }
-
-  /*footer {*/
-    /*height: 100px;*/
-    /*bottom: 0;*/
-    /*width: 100%;*/
-    /*text-align: center;*/
-    /*color: #9c968e;*/
-    /*font-size: 1em;*/
-    /*font-style: italic;*/
-    /*margin-top: 30px;*/
-    /*margin-bottom: 30px;*/
-  /*}*/
 </style>
