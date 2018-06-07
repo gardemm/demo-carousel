@@ -1,6 +1,4 @@
 module.exports = {
-  mode: 'spa',
-
   modules: [
     ['bootstrap-vue/nuxt']
   ],
@@ -47,7 +45,7 @@ module.exports = {
 
   plugins: [
     { src: '~/plugins/font-awesome' },
-    { src: '~plugins/vue-carousel.js' }
+    { src: '~plugins/vue-carousel.js', ssr: true }
   ],
 
   router: {
