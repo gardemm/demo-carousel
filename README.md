@@ -1,10 +1,10 @@
-# demo-carousel
+# Vue bootstrap carousel demo
 
-> Nuxt.js project
+> Nuxt.js
 
 > [Vue bootstrap](https://bootstrap-vue.js.org/docs)
 
-> FontAwesome
+> Font-awesome
 
 Live [Demo](http://demo-carousel.archebasov.ru)
 
