@@ -1,7 +1,7 @@
 <template>
   <div>
 
-    <h1>Demo carousel</h1>
+    <h1>Vue bootstrap carousel live demo:</h1>
     <b-row>
 
       <!-- FORM VALUES -->

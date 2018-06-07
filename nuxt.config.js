@@ -46,7 +46,8 @@ module.exports = {
   },
 
   plugins: [
-    '~plugins/vue-carousel.js'
+    { src: '~/plugins/font-awesome' },
+    { src: '~plugins/vue-carousel.js' }
   ],
 
   router: {

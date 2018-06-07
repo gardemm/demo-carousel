@@ -6,16 +6,8 @@
 
         <b-collapse is-nav id="nav_collapse">
 
-          <b-navbar-nav>
-            <li class="nav-item">
-              <router-link class="nav-link" to="/">Home</router-link>
-            </li>
-            <li class="nav-item">
-              <router-link class="nav-link" to="about">About</router-link>
-            </li>
-            <li class="nav-item">
-              <router-link class="nav-link" to="contacts">Contacts</router-link>
-            </li>
+          <b-navbar-nav class="ml-auto">
+            <b-nav-item href="https://github.com/gardemm/demo-carousel"><font-awesome-icon :icon="['fab', 'github']" /> Github</b-nav-item>
           </b-navbar-nav>
 
         </b-collapse>
@@ -31,12 +23,13 @@
 </template>
 
 <style>
-  h1 {
+  h1, h2 {
     margin-bottom: 35px;
     margin-top: 35px;
+    color: #4aa3b8;
   }
 
-  .fake-height {
-    height: 2000px;
+  html, body {
+    color: #4aa3b8;
   }
 </style>

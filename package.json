@@ -13,12 +13,13 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
-    "bootstrap-vue": "^2.0.0-rc.9",
-    "node-sass": "^4.9.0",
+    "@fortawesome/fontawesome": "^1.1.8",
+    "@fortawesome/fontawesome-free-brands": "^5.0.13",
+    "@fortawesome/fontawesome-free-solid": "^5.0.13",
+    "@fortawesome/vue-fontawesome": "^0.0.23",
+    "bootstrap-vue": "^2.0.0-rc.11",
     "nuxt": "^1.4.0",
-    "sass-loader": "^7.0.1",
-    "vue-carousel": "^0.7.3",
-    "vue-style-loader": "^4.1.0",
+    "vue-carousel": "^0.8.1",
     "vuex": "^3.0.1"
   },
   "devDependencies": {
@@ -27,6 +28,9 @@
     "eslint": "^4.19.1",
     "eslint-friendly-formatter": "^4.0.1",
     "eslint-loader": "^2.0.0",
-    "eslint-plugin-vue": "^4.5.0"
+    "eslint-plugin-vue": "^4.5.0",
+    "node-sass": "^4.9.0",
+    "sass-loader": "^7.0.3",
+    "vue-style-loader": "^4.1.0"
   }
 }
