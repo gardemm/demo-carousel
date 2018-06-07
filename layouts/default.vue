@@ -1,5 +1,7 @@
 <template>
-  <div class="fake-height">
+  <div class="wrapper">
+
+    <!-- NAVBAR -->
     <b-navbar toggleable sticky type="dark" variant="info">
       <b-container>
         <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
@@ -14,22 +16,66 @@
       </b-container>
     </b-navbar>
 
+    <!-- CONTENT -->
     <b-container>
 
       <nuxt/>
 
     </b-container>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <b-container>
+        @2018
+      </b-container>
+    </footer>
+
   </div>
 </template>
 
-<style>
+<style lang="scss" >
   h1, h2 {
     margin-bottom: 35px;
     margin-top: 35px;
     color: #4aa3b8;
   }
 
-  html, body {
+  // STICKY FOOTER MTFKA
+  html {
     color: #4aa3b8;
+    background-color: #f5f5f5;
+    position: relative;
+    min-height: 100%;
   }
+
+  body {
+    margin: 0 0 60px;
+    background-color: #f5f5f5;
+  }
+
+  .form-control:focus {
+    box-shadow: none;
+  }
+
+  .footer {
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+
+  }
+
+  /*footer {*/
+    /*height: 100px;*/
+    /*bottom: 0;*/
+    /*width: 100%;*/
+    /*text-align: center;*/
+    /*color: #9c968e;*/
+    /*font-size: 1em;*/
+    /*font-style: italic;*/
+    /*margin-top: 30px;*/
+    /*margin-bottom: 30px;*/
+  /*}*/
 </style>

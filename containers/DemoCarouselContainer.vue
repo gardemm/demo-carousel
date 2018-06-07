@@ -1,7 +1,7 @@
 <template>
   <div>
 
-    <h1>Vue bootstrap carousel live demo:</h1>
+    <h1>Vue bootstrap <span class="topic">carousel live demo</span></h1>
     <b-row>
 
       <!-- FORM VALUES -->
@@ -21,6 +21,8 @@
           <option value=1>1</option>
           <option value=2>2</option>
           <option value=3>3</option>
+          <option value=4>4</option>
+          <option value=5>5</option>
         </b-form-select>
       </div>
 
@@ -35,7 +37,6 @@
     <!-- CAROUSEL -->
     <DemoCarousel :mobileItemsCount="mobileItemsCount"
                   :desktopItemsCount="desktopItemsCount"
-                  :sliderItems="sliderItems"
                   :sliderItemsCount="sliderItemsCount"></DemoCarousel>
 
   </div>
@@ -51,8 +52,7 @@
     },
     data () {
       return {
-        sliderItemsPercentVal: 100 / this.$store.state.carousel.sliderItems.length * this.sliderItemsCount,
-        sliderItems: this.$store.state.carousel.sliderItems,
+        sliderItemsPercentVal: 100 / this.$store.state.carousel.allItemsCount * this.sliderItemsCount,
         sliderItemsCount: this.$store.state.carousel.sliderItemsCount,
         mobileItemsCount: this.$store.state.carousel.mobileItemsCount,
         desktopItemsCount: this.$store.state.carousel.desktopItemsCount,
@@ -72,7 +72,7 @@
         changeSliderICount: function () {
           this.$nextTick(function () {
             this.$store.dispatch('changeSliderItemsCount',
-              parseInt(this.$store.state.carousel.sliderItems.length / 100 * this.sliderItemsPercentVal) || 1).then(() => {
+              parseInt(this.$store.state.carousel.allItemsCount / 100 * this.sliderItemsPercentVal) || 1).then(() => {
                 this.sliderItemsCount = this.$store.state.carousel.sliderItemsCount;
               });
           })
@@ -82,4 +82,8 @@
   }
 </script>
 
-
+<style lang="scss" scoped>
+  .topic {
+    color: #9c968e;
+  }
+</style>
