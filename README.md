@@ -1,4 +1,4 @@
-# Vue bootstrap carousel demo
+# Vue bootstrap carousel
 
 > Nuxt.js
 
