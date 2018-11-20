@@ -9,8 +9,8 @@ module.exports = {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { name: 'keywords', content: 'Vue bootstrap carousel demo, vue carousel example, nuxt carousel example, '},
-      { hid: 'description', name: 'description', content: 'Vue bootstrap carousel demo ssr' }
+      { name: 'keywords', content: 'Vue bootstrap carousel demo'},
+      { hid: 'description', name: 'description', content: 'Vue bootstrap carousel demo' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
@@ -45,7 +45,7 @@ module.exports = {
   ],
 
   router: {
-    scrollBehavior: function (to, from, savedPosition) {
+    scrollBehavior: function () {
       return {x: 0, y: 0}
     }
   }

@@ -1,6 +1,5 @@
 <template>
   <div class="wrapper">
-
     <!-- NAVBAR -->
     <b-navbar toggleable sticky type="dark" variant="info">
       <b-container>

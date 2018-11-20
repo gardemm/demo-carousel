@@ -1,7 +1,7 @@
 <template>
   <div>
 
-    <h1>Vue bootstrap <span class="topic">carousel live demo</span></h1>
+    <h1>Vue bootstrap <span class="topic">carousel</span></h1>
     <b-row>
 
       <!-- FORM VALUES -->
@@ -27,8 +27,12 @@
       <!-- SLIDER ITEMS COUNT -->
       <div class="col-12 col-sm-4 col-md-6 col-xl-6">
         <div>Slider items count: {{ sliderItemsCount }}</div>
-        <b-form-input v-model="sliderItemsPercentVal" @change.native="changeSliderICount" type="range" class="mb-3">
-        </b-form-input>
+
+        <!-- обработчики работают на внешнем элементе -->
+        <div v-on:mousedown="startDrag" v-on:mousemove="doDrag">
+          <b-form-input v-model="sliderItemsPercentVal" @change.native="changeSliderICount" type="range" class="mb-3">
+          </b-form-input>
+        </div>
       </div>
     </b-row>
 
@@ -41,38 +45,68 @@
 </template>
 
 <script>
-  import DemoCarousel from '~/components/DemoCarousel';
+  import DemoCarousel from '~/components/DemoCarousel'
 
   export default {
     name: 'DemoCarouselContainer',
     components: {
       DemoCarousel
     },
+    mounted () {
+      window.addEventListener('mouseup', this.stopDrag)
+    },
+    beforeDestroy() {
+      window.removeEventListener('mouseup', this.stopDrag)
+    },
+    methods: {
+    },
     data () {
       return {
+        // флаг, что осуществляем прокрутку слайдера
+        dragging: false,
+
         sliderItemsPercentVal: 100 / this.$store.state.carousel.allItemsCount * this.sliderItemsCount,
         sliderItemsCount: this.$store.state.carousel.sliderItemsCount,
         mobileItemsCount: this.$store.state.carousel.mobileItemsCount,
         desktopItemsCount: this.$store.state.carousel.desktopItemsCount,
 
+        // --- slider drag force updater
+        startDrag: () => {
+          this.dragging = true
+        },
+
+        stopDrag: () => {
+          this.dragging = false
+        },
+
+        doDrag: () => {
+          if (this.dragging) {
+            this.changeSliderICount()
+          }
+        },
+        // --- slider events
+
+        // Изменить количество отображаемых слайдов для мобильника
         changeMobileICount: function () {
           this.$nextTick(function () {
             this.$store.dispatch('changeMobileItemsCount', this.desktopItemsCount)
           })
         },
 
+        // Изменить количество отображаемых слайдов для десктопного расширения
         changeDesktopICount: function () {
           this.$nextTick(function () {
             this.$store.dispatch('changeDesktopItemsCount', this.desktopItemsCount)
           })
         },
 
+        // Изменить количество слайдов
         changeSliderICount: function () {
           this.$nextTick(function () {
             this.$store.dispatch('changeSliderItemsCount',
-              parseInt(this.$store.state.carousel.allItemsCount / 100 * this.sliderItemsPercentVal) || 1).then(() => {
-                this.sliderItemsCount = this.$store.state.carousel.sliderItemsCount;
-              });
+                                 parseInt(this.$store.state.carousel.allItemsCount / 100 * this.sliderItemsPercentVal) || 1).then(() => {
+                                   this.sliderItemsCount = this.$store.state.carousel.sliderItemsCount
+                                 })
           })
         },
       }

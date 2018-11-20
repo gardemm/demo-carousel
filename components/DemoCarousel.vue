@@ -20,22 +20,67 @@
 </script>
 
 <style lang="scss">
+
   .VueCarousel {
     text-align: center;
 
+    // кнопки навигации по краям
     .VueCarousel-navigation-button {
       font-size: 5rem;
       top: 40% !important;
     }
-  }
 
-  .VueCarousel-slide {
-    position: relative;
-    min-height: 100px;
+    // их анимация
+    $padding-animation: 13px;
 
-    .image{
-      width: 300px;
-      max-width: 100%;
+    // слева
+    .VueCarousel-navigation-prev:not(.VueCarousel-navigation--disabled) {
+      padding-right: 0;
+      transition: padding-right 0.5s ease;
+      &:hover {
+         padding-right: $padding-animation !important;
+      }
+    }
+
+    // справа
+    .VueCarousel-navigation-next:not(.VueCarousel-navigation--disabled) {
+      padding-left: 0;
+      transition: padding-left 0.5s ease;
+      &:hover {
+        padding-left: $padding-animation !important;
+      }
+    }
+
+    // точка снизу
+    .VueCarousel-dot {
+
+      @keyframes shake {
+        0% {
+          transform: scale(1);
+        }
+
+        20% {
+          transform: scale(0.8);
+        }
+
+        40% {
+          transform: scale(2);
+        }
+        70% {
+          transform: scale(0.8);
+        }
+
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      // transition: all 0.6s ease;
+      // когда активна
+      &.VueCarousel-dot--active {
+        animation: shake 0.4s cubic-bezier(.36, .07, .19, .97) both;
+        // transform: scale(2);
+      }
     }
   }
 
