@@ -1,12 +1,14 @@
 # Vue bootstrap carousel
 
-> Nuxt.js
+> [Nuxt.js](https://github.com/nuxt)
 
-> [Vue bootstrap](https://bootstrap-vue.js.org/docs)
+> [Vue-bootstrap](https://bootstrap-vue.js.org/docs)
 
-> Font-awesome
+> [Font-awesome](https://github.com/FortAwesome/Font-Awesome)
 
-Live [Demo](http://demo-carousel.archebasov.ru)
+> [Vue-carousel](https://github.com/SSENSE/vue-carousel)
+
+> [Vuex](https://github.com/vuejs/vuex)
 
 ## Build Setup
 
