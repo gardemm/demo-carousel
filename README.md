@@ -10,6 +10,8 @@
 
 > [Vuex](https://github.com/vuejs/vuex)
 
+Watch [Demo](http://nuxt-demo.archebasov.ru)
+
 ## Build Setup
 
 ``` bash
