@@ -1,7 +1,8 @@
 <template>
     <carousel :scrollPerPage="true" :navigation-enabled="true" paginationActiveColor="#4aa3b8"
               navigationNextLabel="&#8250;" navigationPrevLabel="&#8249;"
-              :perPageCustom="[[0, mobileItemsCount], [768, desktopItemsCount]]">
+              :perPageCustom="[[0, mobileItemsCount], [768, desktopItemsCount]]"
+              loop>
         <slide v-for="(item, index) in parseInt(sliderItemsCount)" :key="'slide-' + index">
             <span>
                 <img :src="'https://loremflickr.com/300/300/dog?random=' + index" class="image">
