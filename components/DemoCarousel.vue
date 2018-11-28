@@ -28,7 +28,7 @@
       top: 40% !important;
     }
 
-    // их анимация
+    // для анимации кнопок по краям
     $padding-animation: 13px;
 
     // слева
@@ -47,6 +47,14 @@
       &:hover {
         padding-left: $padding-animation !important;
       }
+    }
+
+    .VueCarousel-navigation-prev {
+      left: 45px;
+    }
+
+    .VueCarousel-navigation-next {
+      right: 45px;
     }
 
     // точка снизу
@@ -73,11 +81,8 @@
         }
       }
 
-      // transition: all 0.6s ease;
-      // когда активна
       &.VueCarousel-dot--active {
         animation: shake 0.4s cubic-bezier(.36, .07, .19, .97) both;
-        // transform: scale(2);
       }
     }
   }
