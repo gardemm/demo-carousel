@@ -1,47 +1,47 @@
 <template>
-  <div>
+    <div>
 
-    <h1>Vue bootstrap <span class="topic">carousel</span></h1>
-    <b-row>
+        <h1>Vue bootstrap <span class="topic">carousel</span></h1>
+        <b-row>
 
-      <!-- FORM VALUES -->
-      <!-- MOBILE ITEMS COUNT -->
-      <div class="col-6 col-sm-4 col-md-3 col-xl-2">
-        <div>Mobile items count:</div>
-        <b-form-select v-model="mobileItemsCount" @click.native="changeMobileICount" class="mb-3">
-          <option value=1>1</option>
-          <option value=2>2</option>
-        </b-form-select>
-      </div>
+            <!-- FORM VALUES -->
+            <!-- MOBILE ITEMS COUNT -->
+            <div class="col-6 col-sm-4 col-md-3 col-xl-2">
+                <div>Mobile items count:</div>
+                <b-form-select v-model="mobileItemsCount" @click.native="changeMobileICount" class="mb-3">
+                    <option value=1>1</option>
+                    <option value=2>2</option>
+                </b-form-select>
+            </div>
 
-      <!-- DESKTOP ITEMS COUNT -->
-      <div class="col-6 col-sm-4 col-md-3 col-xl-2">
-        <div>Desktop items count:</div>
-        <b-form-select v-model="desktopItemsCount" @click.native="changeDesktopICount" class="mb-3">
-          <option value=1>1</option>
-          <option value=2>2</option>
-          <option value=3>3</option>
-        </b-form-select>
-      </div>
+            <!-- DESKTOP ITEMS COUNT -->
+            <div class="col-6 col-sm-4 col-md-3 col-xl-2">
+                <div>Desktop items count:</div>
+                <b-form-select v-model="desktopItemsCount" @click.native="changeDesktopICount" class="mb-3">
+                    <option value=1>1</option>
+                    <option value=2>2</option>
+                    <option value=3>3</option>
+                </b-form-select>
+            </div>
 
-      <!-- SLIDER ITEMS COUNT -->
-      <div class="col-12 col-sm-4 col-md-6 col-xl-6">
-        <div>Slider items count: {{ sliderItemsCount }}</div>
+            <!-- SLIDER ITEMS COUNT -->
+            <div class="col-12 col-sm-4 col-md-6 col-xl-6">
+                <div>Slider items count: {{ sliderItemsCount }}</div>
 
-        <!-- обработчики работают на внешнем элементе -->
-        <div v-on:mousedown="startDrag" v-on:mousemove="doDrag">
-          <b-form-input v-model="sliderItemsPercentVal" @change.native="changeSliderICount" type="range" class="mb-3">
-          </b-form-input>
-        </div>
-      </div>
-    </b-row>
+                <!-- обработчики работают на внешнем элементе -->
+                <div v-on:mousedown="startDrag" v-on:mousemove="doDrag">
+                    <b-form-input v-model="sliderItemsPercentVal" @change.native="changeSliderICount" type="range" class="mb-3">
+                    </b-form-input>
+                </div>
+            </div>
+        </b-row>
 
-    <!-- CAROUSEL -->
-    <DemoCarousel :mobileItemsCount="mobileItemsCount"
-                  :desktopItemsCount="desktopItemsCount"
-                  :sliderItemsCount="sliderItemsCount"></DemoCarousel>
+         <!--CAROUSEL -->
+        <DemoCarousel :mobileItemsCount="mobileItemsCount"
+                      :desktopItemsCount="desktopItemsCount"
+                      :sliderItemsCount="sliderItemsCount"></DemoCarousel>
 
-  </div>
+    </div>
 </template>
 
 <script>
