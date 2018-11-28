@@ -1,5 +1,7 @@
 <template>
-    <DemoCarouselContainer></DemoCarouselContainer>
+    <div>
+        <DemoCarouselContainer></DemoCarouselContainer>
+    </div>
 </template>
 
 <script>

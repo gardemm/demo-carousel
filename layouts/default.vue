@@ -1,35 +1,32 @@
 <template>
-  <div class="wrapper">
-    <!-- NAVBAR -->
-    <b-navbar toggleable sticky type="dark" variant="info">
-      <b-container>
-        <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
+    <div class="wrapper">
+        <!-- NAVBAR -->
+        <b-navbar toggleable sticky type="dark" variant="info">
+            <b-container>
+                <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
 
-        <b-collapse is-nav id="nav_collapse">
+                <b-collapse is-nav id="nav_collapse">
 
-          <b-navbar-nav class="ml-auto">
-            <b-nav-item href="https://github.com/gardemm/demo-carousel"><font-awesome-icon :icon="['fab', 'github']" /> Github</b-nav-item>
-          </b-navbar-nav>
+                    <b-navbar-nav class="ml-auto">
+                        <b-nav-item href="https://github.com/gardemm/demo-carousel"><font-awesome-icon :icon="['fab', 'github']" ></font-awesome-icon> Github</b-nav-item>
+                    </b-navbar-nav>
 
-        </b-collapse>
-      </b-container>
-    </b-navbar>
+                </b-collapse>
+            </b-container>
+        </b-navbar>
 
-    <!-- CONTENT -->
-    <b-container>
+        <!-- CONTENT -->
+        <b-container>
+            <nuxt/>
+        </b-container>
 
-      <nuxt/>
-
-    </b-container>
-
-    <!-- FOOTER -->
-    <footer class="footer">
-      <b-container>
-        @2018
-      </b-container>
-    </footer>
-
-  </div>
+        <!-- FOOTER -->
+        <footer class="footer">
+            <b-container>
+                @2018
+            </b-container>
+        </footer>
+    </div>
 </template>
 
 <style lang="scss">
