@@ -1,6 +1,6 @@
 import Vue from 'vue'
 // the component
-import FontAwesomeIcon from '@fortawesome/vue-fontawesome'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 // the library
 import fontawesome from '@fortawesome/fontawesome'
 // add more icon categories as you want them, even works with pro packs
